@@ -1,0 +1,27 @@
+DP ⊻ SP ⊻ KP
+DA ⊻ SA ⊻ KA
+DV ⊻ SV ⊻ KV
+DP ⊻ DA ⊻ DV
+SP ⊻ SA ⊻ SV
+KP ⊻ KA ⊻ KV
+¬DP ⊻ ¬SP
+¬DP ⊻ ¬KP
+¬SP ⊻ ¬KP
+¬DA ⊻ ¬SA
+¬DA ⊻ ¬KA
+¬SA ⊻ ¬KA
+¬DV ⊻ ¬SV
+¬DV ⊻ ¬KV
+¬SV ⊻ ¬KV
+¬DP ⊻ ¬DA
+¬DP ⊻ ¬DV
+¬DA ⊻ ¬DV
+¬SP ⊻ ¬SA
+¬SP ⊻ ¬SV
+¬SA ⊻ ¬SV
+¬KP ⊻ ¬KA
+¬KP ⊻ ¬KV
+¬KA ⊻ ¬KV
+¬DP
+¬DV
+¬SV

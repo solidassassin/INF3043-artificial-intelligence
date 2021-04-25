@@ -1,0 +1,10 @@
+JP ⊻ JM
+SP ⊻ SM
+JP ⊻ SP
+JM ⊻ SM ⊻ KM
+¬JP ⊻ ¬JM
+¬SP ⊻ ¬SM
+¬JP ⊻ ¬SP
+¬JM ⊻ ¬SM
+¬SP
+¬JP

@@ -4,14 +4,16 @@ using .PocketCube
 
 # Initialize cube (solved state)
 cube = fill.(1:6, ((2, 2),))
-solution_states = []
+solution_states = Array{String,1}()
 # Will be treated as node children
-moves = (u, f, r, u∘u∘u, f∘f∘f, r∘r∘r)
+moves = (u, f, r, u ∘ u ∘ u, f ∘ f ∘ f, r ∘ r ∘ r)
+names = ("u", "f", "r", "up", "fp", "rp")
 
 # Shuffle cube
 function scramble(cb, amount)
     for _ = 1:amount
         cb = rand(moves)(cb)
+        println(cb)
     end
     cb
 end
@@ -32,19 +34,19 @@ function dfs(states, depth)
     if depth == 0
         return false
     end
-    for state = states
+    for (state, name) = zip(states, names)
         if solved(state)
             return true
         end
         sts = [i(state) for i in moves]
         has_result = dfs(sts, depth - 1)
         if has_result
-            pushfirst!(solution_states, state)
+            pushfirst!(solution_states, "$name $state")
             return true
         end
     end
     false
 end
 
-"Solution found: $(loop(cube |> u |> r |> f, 3))" |> println
+"Solution found: $(loop(scramble(cube, 4), 4))" |> println
 solution_states .|> println
